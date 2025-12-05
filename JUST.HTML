@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal da Justiça — Pronto para Vercel</title>
+    <meta name="description" content="Site informativo sobre leis básicas, direitos e recomendações públicas.">
+    <style>
+        :root {
+            --bg: #f7f7fb;
+            --card: #ffffff;
+            --accent: #0b5ed7;
+            --muted: #6b6f76;
+            --maxw: 1100px;
+            --radius: 12px;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: #111
+        }
+
+        .container {
+            max-width: var(--maxw);
+            margin: 32px auto;
+            padding: 0 16px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #3aa0ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700
+        }
+
+        nav a {
+            margin-left: 18px;
+            text-decoration: none;
+            color: var(--muted);
+            font-weight: 600
+        }
+
+        .hero {
+            background: linear-gradient(180deg, rgba(11, 94, 215, 0.06), transparent);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 20px
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 28px
+        }
+
+        .hero p {
+            color: var(--muted);
+            margin-top: 8px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 18px
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 6px 20px rgba(12, 20, 50, 0.06)
+        }
+
+        /* leis */
+        .leis {
+            grid-column: span 8
+        }
+
+        .recomendacoes {
+            grid-column: span 4
+        }
+
+        .lei-item {
+            border-left: 4px solid var(--accent);
+            padding: 12px 14px;
+            margin-bottom: 14px
+        }
+
+        .lei-item h3 {
+            margin: 0;
+            font-size: 18px
+        }
+
+        .lei-item p {
+            margin: 6px 0;
+            color: var(--muted)
+        }
+
+        .rec-list {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .rec-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            color: var(--muted)
+        }
+
+        footer {
+            margin-top: 28px;
+            padding: 18px 0;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        /* contato */
+        form label {
+            display: block;
+            font-size: 13px;
+            margin-top: 10px;
+            color: #333
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e6e9ef;
+            margin-top: 6px
+        }
+
+        button {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 0;
+            background: var(--accent);
+            color: white;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+        /* responsivo */
+        @media(max-width:900px) {
+
+            .leis,
+            .recomendacoes {
+                grid-column: span 12
+            }
+
+            .hero h1 {
+                font-size: 22px
+            }
+
+            nav {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">J</div>
+                <div>
+                    <div style="font-weight:700">Portal da Justiça</div>
+                    <div style="font-size:12px;color:var(--muted)">Informações públicas e orientações</div>
+                </div>
+            </div>
+            <nav aria-label="menu principal">
+                <a href="#leis">Leis</a>
+                <a href="#recomendacoes">Recomendações</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </header>
+
+        <section class="hero card" role="region" aria-label="introducao">
+            <h1>Bem-vindo ao Portal da Justiça</h1>
+            <p>Este site tem caráter informativo: apresenta leis gerais, explicações simples e recomendações públicas
+                para cidadãos. Para orientação jurídica específica, consulte um advogado ou órgão oficial.</p>
+        </section>
+
+        <main class="grid">
+            <section class="leis card" id="leis" aria-labelledby="leis-title">
+                <h2 id="leis-title">Algumas leis e princípios básicos</h2>
+
+                <article class="lei-item" aria-labelledby="lei1">
+                    <h3 id="lei1">Artigo Exemplo 1 — Direito à Igualdade</h3>
+                    <p>Todo cidadão tem o direito de ser tratado com igualdade perante a lei, sem discriminação por
+                        razões de sexo, raça, religião, orientação ou condição social.</p>
+                </article>
+
+                <article class="lei-item" aria-labelledby="lei2">
+                    <h3 id="lei2">Artigo Exemplo 2 — Proteção à Propriedade</h3>
+                    <p>Nenhuma pessoa pode ser privada de sua propriedade sem o devido processo legal e, quando
+                        aplicável, compensação justa.</p>
+                </article>
+
+                <article class="lei-item" aria-labelledby="lei3">
+                    <h3 id="lei3">Artigo Exemplo 3 — Liberdade de Expressão</h3>
+                    <p>A liberdade de expressão é garantida, limitada apenas por leis que visem proteger a segurança
+                        pública, a honra e os direitos de terceiros.</p>
+                </article>
+
+                <article class="lei-item" aria-labelledby="lei4">
+                    <h3 id="lei4">Artigo Exemplo 4 — Direito ao Devido Processo</h3>
+                    <p>Qualquer pessoa acusada de um crime tem direito a um julgamento justo, defesa adequada e
+                        presunção de inocência até prova em contrário.</p>
+                </article>
+
+                <details style="margin-top:12px">
+                    <summary style="cursor:pointer;font-weight:700">Notas importantes</summary>
+                    <p style="color:var(--muted)">Os textos acima são exemplos ilustrativos para um site informativo.
+                        Para textos legais oficiais, consulte a legislação nacional e fontes governamentais.</p>
+                </details>
+            </section>
+
+            <aside class="recomendacoes card" id="recomendacoes" aria-labelledby="rec-title">
+                <h2 id="rec-title">Recomendações públicas</h2>
+                <ul class="rec-list">
+                    <li><strong>Documentos:</strong> Mantenha cópias digitais e físicas dos documentos pessoais (BI,
+                        passaporte, certidões).</li>
+                    <li><strong>Denúncias:</strong> Para violência ou abuso, procure imediatamente serviços policiais ou
+                        serviços sociais locais.</li>
+                    <li><strong>Consultoria:</strong> Em dúvidas legais, procure um advogado ou as defensorias públicas
+                        gratuitas quando disponível.</li>
+                    <li><strong>Consciência dos Direitos:</strong> Informe-se sobre prazos legais (prescrição) e prazos
+                        processuais para evitar perder direitos.</li>
+                    <li><strong>Participação Cívica:</strong> Participe de consultas públicas e assista a sessões
+                        municipais para se informar sobre decisões locais.</li>
+                </ul>
+
+                <hr style="margin:14px 0;border:none;border-top:1px solid #f0f0f0">
+                <h3>Serviços úteis</h3>
+                <p style="color:var(--muted)">Números e contatos de emergência, defensorias e centros de assistência
+                    podem variar conforme a região. Procure os canais oficiais do seu município.</p>
+            </aside>
+
+            <section class="card" style="grid-column:span 12;" id="recursos">
+                <h2>Recursos e links úteis</h2>
+                <p style="color:var(--muted)">Aqui estão exemplos de recursos que você pode adicionar ao portal:</p>
+                <ul>
+                    <li>Link para legislação nacional (site do Governo ou Diário Oficial).</li>
+                    <li>Contacto da Defensoria Pública / Serviços Jurídicos Gratuitos.</li>
+                    <li>Guias de procedimento em casos de violência doméstica, fraude e proteção ao consumidor.</li>
+                </ul>
+
+                <h3>Modelo de formulário de queixa (exemplo)</h3>
+                <p style="color:var(--muted)">Você pode inserir um formulário seguro para registar queixas ou pedidos de
+                    informação — lembre-se de proteger dados sensíveis.</p>
+            </section>
+
+            <section class="card" id="contato" style="grid-column:span 12">
+                <h2>Contato</h2>
+                <p style="color:var(--muted)">Use o formulário abaixo para enviar mensagens (exemplo não enviado a
+                    servidor).</p>
+                <form
+                    onsubmit="event.preventDefault(); alert('Formulário de exemplo — conectar ao servidor para enviar.');">
+                    <label for="nome">Nome completo</label>
+                    <input id="nome" name="nome" placeholder="Seu nome" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"
+                        required></textarea>
+
+                    <button type="submit">Enviar (exemplo)</button>
+                </form>
+            </section>
+
+        </main>
+
+        <footer>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                <div>© Portal da Justiça — Conteúdo informativo</div>
+                <div style="color:var(--muted)">Aviso: Este site não substitui aconselhamento jurídico profissional.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<!-- Arquivo pronto para publicar no Vercel: basta renomear para index.html -->
+
+</html>
